@@ -12,15 +12,17 @@ namespace Proyecto_3
     {
         bool activarMotores;
         int porcentajeTinaco;
+        PictureBox img;
 
         SolidBrush lapiz;
         public Graphics graficos;
         Rectangle tinaco = new Rectangle(47, 10, 180, 180);
 
-        public Animaciones(PictureBox px)
+        public Animaciones(PictureBox px,PictureBox img)
         {
             lapiz = new SolidBrush(Color.Aqua);
             graficos = px.CreateGraphics();
+            this.img = img;
         }
 
         public void LlenarTinaco(int porcentaje)
@@ -38,6 +40,13 @@ namespace Proyecto_3
                 porcentajeTinaco = porcentaje;
             }
 
+            if (porcentaje>=90 )
+            {
+                activarMotores = true;
+            }else if(porcentaje <=3)
+            {
+                activarMotores = false;
+            }
             tinaco.Height = 180 - (int)(porcentajeTinaco * 1.8);
             tinaco.Y = 190 - tinaco.Height;
             pintarAgua();
@@ -45,8 +54,8 @@ namespace Proyecto_3
         public void pintarAgua()
         {
             graficos.Clear(Color.White);
-
             graficos.FillRectangle(lapiz, tinaco);
+            img.Enabled = activarMotores;
         }
 
     }

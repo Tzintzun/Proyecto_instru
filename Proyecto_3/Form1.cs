@@ -17,7 +17,8 @@ namespace Proyecto_3
         public Form1()
         {
             InitializeComponent();
-            an = new Animaciones(lienzo);
+            an = new Animaciones(lienzo,imagenMotor);
+            imagenMotor.Enabled = false;
             an.CreateControl();
         }
 
@@ -39,7 +40,7 @@ namespace Proyecto_3
 
             Mensaje("Se encontraron " + nomPuertos.Length + " puertos", Color.Black);
             comunicaciones.DataReceived += new SerialDataReceivedEventHandler(RecivirDatos);
-            Image img = Image.FromFile("C:\\Users\\david\\Desktop\\Semestre 7\\Instrumentacion\\Proyecto 3\\motor (1).gif");
+            Image img = Image.FromFile("C:\\Users\\david\\Desktop\\Semestre 7\\Instrumentacion\\Proyecto 3\\Proyecto_3\\motor (1).gif");
             //Bitmap bpm = new Bitmap(img);
             imagenMotor.Image = img;
             
@@ -107,6 +108,7 @@ namespace Proyecto_3
 
                 byte[] instruccionInicio = { 1 };
                 comunicaciones.Write(instruccionInicio, 0,1);
+                
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -134,6 +136,7 @@ namespace Proyecto_3
                 MessageBox.Show(ex.Message);
             }
             an.graficos.Clear(Color.White);
+            imagenMotor.Enabled = false;
         }
     }
 }

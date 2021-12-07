@@ -36,11 +36,12 @@ namespace Proyecto_3
             this.botonConectar = new System.Windows.Forms.Button();
             this.botonDesconectar = new System.Windows.Forms.Button();
             this.mensajes = new System.Windows.Forms.Label();
-            this.imagenMotor = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.img_motor = new System.Windows.Forms.PictureBox();
+            this.img_water = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.lienzo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagenMotor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_motor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_water)).BeginInit();
             this.SuspendLayout();
             // 
             // lienzo
@@ -113,26 +114,26 @@ namespace Proyecto_3
             this.mensajes.TabIndex = 5;
             this.mensajes.Click += new System.EventHandler(this.label1_Click);
             // 
-            // imagenMotor
+            // img_motor
             // 
-            this.imagenMotor.Image = ((System.Drawing.Image)(resources.GetObject("imagenMotor.Image")));
-            this.imagenMotor.Location = new System.Drawing.Point(221, 390);
-            this.imagenMotor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.imagenMotor.Name = "imagenMotor";
-            this.imagenMotor.Size = new System.Drawing.Size(218, 137);
-            this.imagenMotor.TabIndex = 6;
-            this.imagenMotor.TabStop = false;
-            this.imagenMotor.Click += new System.EventHandler(this.imagenMotor_Click);
+            this.img_motor.Image = ((System.Drawing.Image)(resources.GetObject("img_motor.Image")));
+            this.img_motor.Location = new System.Drawing.Point(221, 390);
+            this.img_motor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.img_motor.Name = "img_motor";
+            this.img_motor.Size = new System.Drawing.Size(218, 137);
+            this.img_motor.TabIndex = 6;
+            this.img_motor.TabStop = false;
+            this.img_motor.Click += new System.EventHandler(this.imagenMotor_Click);
             // 
-            // pictureBox1
+            // img_water
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pictureBox1.Location = new System.Drawing.Point(454, 460);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 17);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.img_water.BackColor = System.Drawing.SystemColors.Window;
+            this.img_water.Location = new System.Drawing.Point(454, 170);
+            this.img_water.Name = "img_water";
+            this.img_water.Size = new System.Drawing.Size(320, 307);
+            this.img_water.TabIndex = 7;
+            this.img_water.TabStop = false;
+            this.img_water.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
@@ -140,8 +141,8 @@ namespace Proyecto_3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(914, 600);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.imagenMotor);
+            this.Controls.Add(this.img_water);
+            this.Controls.Add(this.img_motor);
             this.Controls.Add(this.mensajes);
             this.Controls.Add(this.botonDesconectar);
             this.Controls.Add(this.botonConectar);
@@ -154,8 +155,8 @@ namespace Proyecto_3
             this.Text = "Sensores";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lienzo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagenMotor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_motor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_water)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,8 +170,9 @@ namespace Proyecto_3
         private System.Windows.Forms.Button botonConectar;
         private System.Windows.Forms.Button botonDesconectar;
         private System.Windows.Forms.Label mensajes;
-        private System.Windows.Forms.PictureBox imagenMotor;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox img_motor;
+        private System.Windows.Forms.PictureBox img_water;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

@@ -335,7 +335,7 @@
         STotaVGSJJ2WtChJkk5LWpQkSafjc2f/H0DcUocFe5tEAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="imagenMotor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="img_motor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlh0gB6APYAAAEBARUVFQQErggI1A4O9CorKyYaoSEX0SspW0c4KlMvYEYxnUdIR1VGMzhTZ1NQ
         S3BMMTNL12RSOVdXV2lWQpFRBlpda3FZRqVaAHljSWdnZ3FmVllqlpthHINqUnBybp9oKa9pC3V1dbtn
@@ -3747,6 +3747,9 @@
         4TAxQNmV8M6uStoZIgY5s54SbQjdK3kpEMCsfSBiIAhNgDVYt9Sr6LK3LSafgGc8EQgAOw==
 </value>
   </data>
+  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAMjIQAAEABABwBwAAFgAAACgAAAAyAAAAZAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

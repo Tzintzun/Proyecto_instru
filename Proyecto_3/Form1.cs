@@ -8,17 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.Drawing.Imaging;
+
 namespace Proyecto_3
 {
     public partial class Form1 : Form
     {
         Animaciones an;
         SerialPort comunicaciones;
+
         public Form1()
         {
             InitializeComponent();
-            an = new Animaciones(lienzo,imagenMotor);
-            imagenMotor.Enabled = false;
+            an = new Animaciones(img_water, img_motor);
+            img_motor.Enabled = false;
             an.CreateControl();
         }
 
@@ -40,10 +43,9 @@ namespace Proyecto_3
 
             Mensaje("Se encontraron " + nomPuertos.Length + " puertos", Color.Black);
             comunicaciones.DataReceived += new SerialDataReceivedEventHandler(RecivirDatos);
-            Image img = Image.FromFile("C:\\Users\\david\\Desktop\\Semestre 7\\Instrumentacion\\Proyecto 3\\Proyecto_3\\motor (1).gif");
+            //Image img = Image.FromFile("C:\\Users\\david\\Desktop\\Semestre 7\\Instrumentacion\\Proyecto 3\\Proyecto_3\\motor (1).gif");
             //Bitmap bpm = new Bitmap(img);
-            imagenMotor.Image = img;
-            
+            //imagenMotor.Image = img;
         }
         private void RecivirDatos(Object sender, SerialDataReceivedEventArgs e)
         {
@@ -56,12 +58,9 @@ namespace Proyecto_3
                     delegate
                     {
                         Mensaje("Distancia medida: " + distancia, Color.Green);
-
                         an.LlenarTinaco((int)distancia);
                     }
                 ));
-            
-            
         }
         public void Mensaje(String mensaje, Color c)
         {
@@ -136,7 +135,7 @@ namespace Proyecto_3
                 MessageBox.Show(ex.Message);
             }
             an.graficos.Clear(Color.White);
-            imagenMotor.Enabled = false;
+            img_motor.Enabled = false;
         }
 
         private void imagenMotor_Click(object sender, EventArgs e)
@@ -156,7 +155,7 @@ namespace Proyecto_3
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

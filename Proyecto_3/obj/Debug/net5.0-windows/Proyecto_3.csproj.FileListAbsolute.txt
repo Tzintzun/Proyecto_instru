@@ -25,3 +25,6 @@ C:\Users\david\Desktop\Semestre 7\Instrumentacion\Proyecto 3\Proyecto_3\Proyecto
 C:\Users\david\Desktop\Semestre 7\Instrumentacion\Proyecto 3\Proyecto_3\Proyecto_3\obj\Debug\net5.0-windows\ref\Proyecto_3.dll
 C:\Users\david\Desktop\Semestre 7\Instrumentacion\Proyecto 3\Proyecto_3\Proyecto_3\obj\Debug\net5.0-windows\Proyecto_3.pdb
 C:\Users\david\Desktop\Semestre 7\Instrumentacion\Proyecto 3\Proyecto_3\Proyecto_3\obj\Debug\net5.0-windows\Proyecto_3.genruntimeconfig.cache
+C:\Users\david\Documents\GitHub\Proyecto_instru\Proyecto_3\obj\Debug\net5.0-windows\Proyecto_3.dll
+C:\Users\david\Documents\GitHub\Proyecto_instru\Proyecto_3\obj\Debug\net5.0-windows\ref\Proyecto_3.dll
+C:\Users\david\Documents\GitHub\Proyecto_instru\Proyecto_3\obj\Debug\net5.0-windows\Proyecto_3.pdb

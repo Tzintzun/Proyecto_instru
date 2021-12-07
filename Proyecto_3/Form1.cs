@@ -138,5 +138,25 @@ namespace Proyecto_3
             an.graficos.Clear(Color.White);
             imagenMotor.Enabled = false;
         }
+
+        private void imagenMotor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lienzo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

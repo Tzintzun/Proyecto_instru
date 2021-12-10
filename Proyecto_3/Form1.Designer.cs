@@ -35,11 +35,13 @@ namespace Proyecto_3
             this.botonBuscarPuertos = new System.Windows.Forms.Button();
             this.botonConectar = new System.Windows.Forms.Button();
             this.botonDesconectar = new System.Windows.Forms.Button();
-            this.mensajes = new System.Windows.Forms.Label();
+            this.mensajesDistancia = new System.Windows.Forms.Label();
             this.img_motor = new System.Windows.Forms.PictureBox();
             this.img_water = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.mensajeTemperatura = new System.Windows.Forms.Label();
+            this.mensajeLuz = new System.Windows.Forms.Label();
+            this.mensajes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lienzo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_motor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_water)).BeginInit();
@@ -101,15 +103,15 @@ namespace Proyecto_3
             this.botonDesconectar.UseVisualStyleBackColor = false;
             this.botonDesconectar.Click += new System.EventHandler(this.botonDesconectar_Click);
             // 
-            // mensajes
+            // mensajesDistancia
             // 
-            this.mensajes.AutoSize = true;
-            this.mensajes.Location = new System.Drawing.Point(199, 55);
-            this.mensajes.Name = "mensajes";
-            this.mensajes.Size = new System.Drawing.Size(101, 15);
-            this.mensajes.TabIndex = 5;
-            this.mensajes.Text = "Distancia medida:";
-            this.mensajes.Click += new System.EventHandler(this.label1_Click);
+            this.mensajesDistancia.AutoSize = true;
+            this.mensajesDistancia.Location = new System.Drawing.Point(199, 55);
+            this.mensajesDistancia.Name = "mensajesDistancia";
+            this.mensajesDistancia.Size = new System.Drawing.Size(101, 15);
+            this.mensajesDistancia.TabIndex = 5;
+            this.mensajesDistancia.Text = "Distancia medida:";
+            this.mensajesDistancia.Click += new System.EventHandler(this.label1_Click);
             // 
             // img_motor
             // 
@@ -141,16 +143,35 @@ namespace Proyecto_3
             this.mensajeTemperatura.TabIndex = 8;
             this.mensajeTemperatura.Text = "Temperatura: ";
             // 
+            // mensajeLuz
+            // 
+            this.mensajeLuz.AutoSize = true;
+            this.mensajeLuz.Location = new System.Drawing.Point(199, 132);
+            this.mensajeLuz.Name = "mensajeLuz";
+            this.mensajeLuz.Size = new System.Drawing.Size(74, 15);
+            this.mensajeLuz.TabIndex = 9;
+            this.mensajeLuz.Text = "Nivel de luz: ";
+            // 
+            // mensajes
+            // 
+            this.mensajes.AutoSize = true;
+            this.mensajes.Location = new System.Drawing.Point(199, 26);
+            this.mensajes.Name = "mensajes";
+            this.mensajes.Size = new System.Drawing.Size(0, 15);
+            this.mensajes.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(930, 528);
+            this.Controls.Add(this.mensajes);
+            this.Controls.Add(this.mensajeLuz);
             this.Controls.Add(this.mensajeTemperatura);
             this.Controls.Add(this.img_water);
             this.Controls.Add(this.img_motor);
-            this.Controls.Add(this.mensajes);
+            this.Controls.Add(this.mensajesDistancia);
             this.Controls.Add(this.botonDesconectar);
             this.Controls.Add(this.botonConectar);
             this.Controls.Add(this.botonBuscarPuertos);
@@ -175,11 +196,13 @@ namespace Proyecto_3
         private System.Windows.Forms.Button botonBuscarPuertos;
         private System.Windows.Forms.Button botonConectar;
         private System.Windows.Forms.Button botonDesconectar;
-        private System.Windows.Forms.Label mensajes;
+        private System.Windows.Forms.Label mensajesDistancia;
         private System.Windows.Forms.PictureBox img_motor;
         private System.Windows.Forms.PictureBox img_water;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label mensajeTemperatura;
+        private System.Windows.Forms.Label mensajeLuz;
+        private System.Windows.Forms.Label mensajes;
     }
 }
 

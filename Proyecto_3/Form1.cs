@@ -55,11 +55,13 @@ namespace Proyecto_3
             String[] info = datos.Split(' ');
             float distancia;
             float temperatura;
+            float luz;
             try
             {
                 distancia = float.Parse(info[0]);
                 temperatura = float.Parse(info[1].Replace("\r\n",""));
-                
+                luz = float.Parse(info[2]);
+
             }
             catch(FormatException ex)
             {
@@ -71,8 +73,9 @@ namespace Proyecto_3
             an.Invoke(new MethodInvoker(
                     delegate
                     {
-                        Mensaje("Distancia medida: " + distancia, Color.Green);
+                        MensajeDistancia("Distancia medida: " + distancia, Color.Green);
                         MensajeTemperatura("Temperatura: " + temperatura + " °C",Color.Black);
+                        MensajeLuz("Nivel de Luz: "+luz,Color.Orange);
                         an.LlenarTinaco((int)distancia);
                     }
             ));
@@ -85,10 +88,21 @@ namespace Proyecto_3
             mensajes.Text = mensaje;
             mensajes.ForeColor = c;
         }
+        public void MensajeDistancia(String mensaje, Color c)
+        {
+            mensajesDistancia.Text = mensaje;
+            mensajesDistancia.ForeColor = c;
+        }
         public void MensajeTemperatura(String mensaje, Color c)
         {
             mensajeTemperatura.Text = mensaje;
             mensajeTemperatura.ForeColor = c;
+        }
+
+        public void MensajeLuz(String mensaje, Color c)
+        {
+            mensajeLuz.Text = mensaje;
+            mensajeLuz.ForeColor = c;
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -51,21 +51,44 @@ namespace Proyecto_3
         {
             SerialPort sp = (SerialPort)sender;
             String datos = sp.ReadLine();
+            Console.WriteLine(datos + " cm");
             String[] info = datos.Split(' ');
-            float distancia = float.Parse(info[0].Replace("\r\n",""));
-
+            float distancia;
+            float temperatura;
+            try
+            {
+                distancia = float.Parse(info[0]);
+                temperatura = float.Parse(info[1].Replace("\r\n",""));
+                
+            }
+            catch(FormatException ex)
+            {
+                Console.WriteLine(ex.Message + "\n Pidiendo datos...");
+                byte[] instruccionInicio = { 1 };
+                comunicaciones.Write(instruccionInicio, 0, 1);
+                return;
+            }
             an.Invoke(new MethodInvoker(
                     delegate
                     {
                         Mensaje("Distancia medida: " + distancia, Color.Green);
+                        MensajeTemperatura("Temperatura: " + temperatura + " °C",Color.Black);
                         an.LlenarTinaco((int)distancia);
                     }
-                ));
+            ));
+
+
+
         }
         public void Mensaje(String mensaje, Color c)
         {
             mensajes.Text = mensaje;
             mensajes.ForeColor = c;
+        }
+        public void MensajeTemperatura(String mensaje, Color c)
+        {
+            mensajeTemperatura.Text = mensaje;
+            mensajeTemperatura.ForeColor = c;
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -39,6 +39,7 @@ namespace Proyecto_3
             this.img_motor = new System.Windows.Forms.PictureBox();
             this.img_water = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.mensajeTemperatura = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lienzo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_motor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_water)).BeginInit();
@@ -47,10 +48,9 @@ namespace Proyecto_3
             // lienzo
             // 
             this.lienzo.Image = ((System.Drawing.Image)(resources.GetObject("lienzo.Image")));
-            this.lienzo.Location = new System.Drawing.Point(364, 13);
-            this.lienzo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lienzo.Location = new System.Drawing.Point(458, 26);
             this.lienzo.Name = "lienzo";
-            this.lienzo.Size = new System.Drawing.Size(502, 514);
+            this.lienzo.Size = new System.Drawing.Size(439, 386);
             this.lienzo.TabIndex = 0;
             this.lienzo.TabStop = false;
             this.lienzo.Click += new System.EventHandler(this.lienzo_Click);
@@ -58,10 +58,9 @@ namespace Proyecto_3
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(23, 24);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox1.Location = new System.Drawing.Point(20, 18);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 28);
+            this.comboBox1.Size = new System.Drawing.Size(137, 23);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -69,10 +68,9 @@ namespace Proyecto_3
             // 
             this.botonBuscarPuertos.BackColor = System.Drawing.Color.SkyBlue;
             this.botonBuscarPuertos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.botonBuscarPuertos.Location = new System.Drawing.Point(23, 86);
-            this.botonBuscarPuertos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.botonBuscarPuertos.Location = new System.Drawing.Point(20, 64);
             this.botonBuscarPuertos.Name = "botonBuscarPuertos";
-            this.botonBuscarPuertos.Size = new System.Drawing.Size(156, 55);
+            this.botonBuscarPuertos.Size = new System.Drawing.Size(136, 41);
             this.botonBuscarPuertos.TabIndex = 2;
             this.botonBuscarPuertos.Text = "Buscar";
             this.botonBuscarPuertos.UseVisualStyleBackColor = false;
@@ -82,10 +80,9 @@ namespace Proyecto_3
             // 
             this.botonConectar.BackColor = System.Drawing.Color.SkyBlue;
             this.botonConectar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.botonConectar.Location = new System.Drawing.Point(17, 212);
-            this.botonConectar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.botonConectar.Location = new System.Drawing.Point(15, 159);
             this.botonConectar.Name = "botonConectar";
-            this.botonConectar.Size = new System.Drawing.Size(162, 55);
+            this.botonConectar.Size = new System.Drawing.Size(142, 41);
             this.botonConectar.TabIndex = 3;
             this.botonConectar.Text = "Conectar";
             this.botonConectar.UseVisualStyleBackColor = false;
@@ -96,10 +93,9 @@ namespace Proyecto_3
             this.botonDesconectar.BackColor = System.Drawing.Color.SkyBlue;
             this.botonDesconectar.Enabled = false;
             this.botonDesconectar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.botonDesconectar.Location = new System.Drawing.Point(17, 289);
-            this.botonDesconectar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.botonDesconectar.Location = new System.Drawing.Point(15, 217);
             this.botonDesconectar.Name = "botonDesconectar";
-            this.botonDesconectar.Size = new System.Drawing.Size(162, 55);
+            this.botonDesconectar.Size = new System.Drawing.Size(142, 41);
             this.botonDesconectar.TabIndex = 4;
             this.botonDesconectar.Text = "Desconectar";
             this.botonDesconectar.UseVisualStyleBackColor = false;
@@ -108,19 +104,19 @@ namespace Proyecto_3
             // mensajes
             // 
             this.mensajes.AutoSize = true;
-            this.mensajes.Location = new System.Drawing.Point(511, 27);
+            this.mensajes.Location = new System.Drawing.Point(199, 55);
             this.mensajes.Name = "mensajes";
-            this.mensajes.Size = new System.Drawing.Size(0, 20);
+            this.mensajes.Size = new System.Drawing.Size(101, 15);
             this.mensajes.TabIndex = 5;
+            this.mensajes.Text = "Distancia medida:";
             this.mensajes.Click += new System.EventHandler(this.label1_Click);
             // 
             // img_motor
             // 
             this.img_motor.Image = ((System.Drawing.Image)(resources.GetObject("img_motor.Image")));
-            this.img_motor.Location = new System.Drawing.Point(221, 390);
-            this.img_motor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.img_motor.Location = new System.Drawing.Point(257, 281);
             this.img_motor.Name = "img_motor";
-            this.img_motor.Size = new System.Drawing.Size(218, 137);
+            this.img_motor.Size = new System.Drawing.Size(191, 131);
             this.img_motor.TabIndex = 6;
             this.img_motor.TabStop = false;
             this.img_motor.Click += new System.EventHandler(this.imagenMotor_Click);
@@ -128,19 +124,30 @@ namespace Proyecto_3
             // img_water
             // 
             this.img_water.BackColor = System.Drawing.SystemColors.Window;
-            this.img_water.Location = new System.Drawing.Point(454, 170);
+            this.img_water.Location = new System.Drawing.Point(545, 178);
+            this.img_water.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.img_water.Name = "img_water";
-            this.img_water.Size = new System.Drawing.Size(320, 307);
+            this.img_water.Size = new System.Drawing.Size(327, 234);
             this.img_water.TabIndex = 7;
             this.img_water.TabStop = false;
             this.img_water.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // mensajeTemperatura
+            // 
+            this.mensajeTemperatura.AutoSize = true;
+            this.mensajeTemperatura.Location = new System.Drawing.Point(199, 90);
+            this.mensajeTemperatura.Name = "mensajeTemperatura";
+            this.mensajeTemperatura.Size = new System.Drawing.Size(79, 15);
+            this.mensajeTemperatura.TabIndex = 8;
+            this.mensajeTemperatura.Text = "Temperatura: ";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(930, 528);
+            this.Controls.Add(this.mensajeTemperatura);
             this.Controls.Add(this.img_water);
             this.Controls.Add(this.img_motor);
             this.Controls.Add(this.mensajes);
@@ -150,7 +157,6 @@ namespace Proyecto_3
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lienzo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Sensores";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -173,6 +179,7 @@ namespace Proyecto_3
         private System.Windows.Forms.PictureBox img_motor;
         private System.Windows.Forms.PictureBox img_water;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label mensajeTemperatura;
     }
 }
 

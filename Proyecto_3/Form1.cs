@@ -113,6 +113,8 @@ namespace Proyecto_3
                     Console.WriteLine("Conectado al puerto " + comunicaciones.PortName, Color.Green);
                 }
 
+                byte[] instruccionInicio = { 1 };
+                comunicaciones.Write(instruccionInicio, 0, 1);
             }
             
             

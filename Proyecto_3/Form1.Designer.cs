@@ -42,9 +42,11 @@ namespace Proyecto_3
             this.mensajeTemperatura = new System.Windows.Forms.Label();
             this.mensajeLuz = new System.Windows.Forms.Label();
             this.mensajes = new System.Windows.Forms.Label();
+            this.img_temp = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.lienzo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_motor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_water)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_temp)).BeginInit();
             this.SuspendLayout();
             // 
             // lienzo
@@ -111,9 +113,10 @@ namespace Proyecto_3
             // mensajesDistancia
             // 
             this.mensajesDistancia.AutoSize = true;
-            this.mensajesDistancia.Location = new System.Drawing.Point(227, 73);
+            this.mensajesDistancia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mensajesDistancia.Location = new System.Drawing.Point(639, 135);
             this.mensajesDistancia.Name = "mensajesDistancia";
-            this.mensajesDistancia.Size = new System.Drawing.Size(128, 20);
+            this.mensajesDistancia.Size = new System.Drawing.Size(158, 20);
             this.mensajesDistancia.TabIndex = 5;
             this.mensajesDistancia.Text = "Distancia medida:";
             this.mensajesDistancia.Click += new System.EventHandler(this.label1_Click);
@@ -121,7 +124,7 @@ namespace Proyecto_3
             // img_motor
             // 
             this.img_motor.Image = ((System.Drawing.Image)(resources.GetObject("img_motor.Image")));
-            this.img_motor.Location = new System.Drawing.Point(327, 357);
+            this.img_motor.Location = new System.Drawing.Point(374, 378);
             this.img_motor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_motor.Name = "img_motor";
             this.img_motor.Size = new System.Drawing.Size(218, 143);
@@ -142,18 +145,20 @@ namespace Proyecto_3
             // mensajeTemperatura
             // 
             this.mensajeTemperatura.AutoSize = true;
-            this.mensajeTemperatura.Location = new System.Drawing.Point(227, 120);
+            this.mensajeTemperatura.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mensajeTemperatura.Location = new System.Drawing.Point(227, 76);
             this.mensajeTemperatura.Name = "mensajeTemperatura";
-            this.mensajeTemperatura.Size = new System.Drawing.Size(100, 20);
+            this.mensajeTemperatura.Size = new System.Drawing.Size(125, 20);
             this.mensajeTemperatura.TabIndex = 8;
             this.mensajeTemperatura.Text = "Temperatura: ";
             // 
             // mensajeLuz
             // 
             this.mensajeLuz.AutoSize = true;
-            this.mensajeLuz.Location = new System.Drawing.Point(227, 176);
+            this.mensajeLuz.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mensajeLuz.Location = new System.Drawing.Point(227, 212);
             this.mensajeLuz.Name = "mensajeLuz";
-            this.mensajeLuz.Size = new System.Drawing.Size(94, 20);
+            this.mensajeLuz.Size = new System.Drawing.Size(113, 20);
             this.mensajeLuz.TabIndex = 9;
             this.mensajeLuz.Text = "Nivel de luz: ";
             // 
@@ -165,12 +170,22 @@ namespace Proyecto_3
             this.mensajes.Size = new System.Drawing.Size(0, 20);
             this.mensajes.TabIndex = 10;
             // 
+            // img_temp
+            // 
+            this.img_temp.BackColor = System.Drawing.SystemColors.Window;
+            this.img_temp.Location = new System.Drawing.Point(291, 99);
+            this.img_temp.Name = "img_temp";
+            this.img_temp.Size = new System.Drawing.Size(100, 100);
+            this.img_temp.TabIndex = 11;
+            this.img_temp.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1066, 717);
+            this.Controls.Add(this.img_temp);
             this.Controls.Add(this.mensajes);
             this.Controls.Add(this.mensajeLuz);
             this.Controls.Add(this.mensajeTemperatura);
@@ -191,6 +206,7 @@ namespace Proyecto_3
             ((System.ComponentModel.ISupportInitialize)(this.lienzo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_motor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_water)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_temp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,6 +226,7 @@ namespace Proyecto_3
         private System.Windows.Forms.Label mensajeTemperatura;
         private System.Windows.Forms.Label mensajeLuz;
         private System.Windows.Forms.Label mensajes;
+        private System.Windows.Forms.PictureBox img_temp;
     }
 }
 

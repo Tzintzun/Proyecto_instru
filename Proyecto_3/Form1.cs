@@ -16,9 +16,11 @@ namespace Proyecto_3
     {
         Animaciones an;
         SerialPort comunicaciones;
+        string path;
 
         public Form1()
         {
+            path = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.Parent.FullName;
             InitializeComponent();
             an = new Animaciones(img_water, img_motor);
             img_motor.Enabled = false;
@@ -75,7 +77,7 @@ namespace Proyecto_3
                        delegate
                        {
                            MensajeDistancia("Distancia medida: " + distancia, Color.Green);
-                           MensajeTemperatura("Temperatura: " + temperatura + " °C", Color.Black);
+                           MensajeTemperatura("Temperatura: " + temperatura + " °C", Color.Black, temperatura);
                            MensajeLuz("Nivel de Luz: " + luz, Color.Orange);
                            an.LlenarTinaco((int)Math.Round(distancia),motor);
                        }
@@ -116,13 +118,6 @@ namespace Proyecto_3
                 byte[] instruccionInicio = { 1 };
                 comunicaciones.Write(instruccionInicio, 0, 1);
             }
-            
-            
-               
-            
-
-
-
         }
         public void Mensaje(String mensaje, Color c)
         {
@@ -134,10 +129,30 @@ namespace Proyecto_3
             mensajesDistancia.Text = mensaje;
             mensajesDistancia.ForeColor = c;
         }
+
         public void MensajeTemperatura(String mensaje, Color c)
         {
             mensajeTemperatura.Text = mensaje;
             mensajeTemperatura.ForeColor = c;
+        }
+        public void MensajeTemperatura(String mensaje, Color c, float temp)
+        {
+            MensajeTemperatura(mensaje, c);
+            if (temp < 0)
+            {
+                img_temp.ImageLocation = path + "\\public\\images\\mucho_frio.png";
+            }else if (temp < 15)
+            {
+                img_temp.ImageLocation = path + "\\public\\images\\frio_original.png";
+            }
+            else if (temp < 35)
+            {
+                img_temp.ImageLocation = path + "\\public\\images\\calor_original.png";
+            }
+            else if (temp >= 35)
+            {
+                img_temp.ImageLocation = path + "\\public\\images\\mucho_calor.png";
+            }
         }
 
         public void MensajeLuz(String mensaje, Color c)

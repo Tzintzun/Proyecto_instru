@@ -18,6 +18,7 @@ namespace Proyecto_3
         SolidBrush lapiz;
         public Graphics graficos;
         //Rectangle tinaco = new Rectangle(454, 460, 320, 17);
+        // madrigal tampoco le muevas aqui ya lo progame para se ajuste solito
         Rectangle tinaco = new Rectangle(0, 0, 324, 311);
 
         public Animaciones(PictureBox px, PictureBox img)
@@ -25,6 +26,7 @@ namespace Proyecto_3
             lapiz = new SolidBrush(Color.DeepSkyBlue);
             graficos = px.CreateGraphics();
             distancia = px.Height;
+            tinaco.Width = px.Width;
             this.img = img;
             
         }

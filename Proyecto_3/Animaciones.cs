@@ -14,7 +14,7 @@ namespace Proyecto_3
         bool activarMotores;
         int porcentajeTinaco;
         PictureBox img;
-        float distancia;
+        int distancia;
         SolidBrush lapiz;
         public Graphics graficos;
         //Rectangle tinaco = new Rectangle(454, 460, 320, 17);
@@ -24,8 +24,9 @@ namespace Proyecto_3
         {
             lapiz = new SolidBrush(Color.DeepSkyBlue);
             graficos = px.CreateGraphics();
-            distancia = 50;
+            distancia = px.Height;
             this.img = img;
+            
         }
 
         public void deconectar()
@@ -50,9 +51,9 @@ namespace Proyecto_3
             {
                 activarMotores = false;
             }
-
-            tinaco.Height = 234 - (int)(porcentajeTinaco * 2.34);
-            tinaco.Y = 234 - tinaco.Height;
+            //madrigal ya no cambies esto mejor acomoda la pacosicion de los objetos en el FORM
+            tinaco.Height = distancia - (int)(porcentajeTinaco * distancia/100);
+            tinaco.Y = distancia - tinaco.Height;
             pintarAgua();
             
         }

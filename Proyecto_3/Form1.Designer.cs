@@ -50,9 +50,9 @@ namespace Proyecto_3
             // lienzo
             // 
             this.lienzo.Image = ((System.Drawing.Image)(resources.GetObject("lienzo.Image")));
-            this.lienzo.Location = new System.Drawing.Point(458, 26);
+            this.lienzo.Location = new System.Drawing.Point(482, 26);
             this.lienzo.Name = "lienzo";
-            this.lienzo.Size = new System.Drawing.Size(439, 386);
+            this.lienzo.Size = new System.Drawing.Size(439, 500);
             this.lienzo.TabIndex = 0;
             this.lienzo.TabStop = false;
             this.lienzo.Click += new System.EventHandler(this.lienzo_Click);
@@ -126,10 +126,10 @@ namespace Proyecto_3
             // img_water
             // 
             this.img_water.BackColor = System.Drawing.SystemColors.Window;
-            this.img_water.Location = new System.Drawing.Point(545, 178);
+            this.img_water.Location = new System.Drawing.Point(569, 181);
             this.img_water.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.img_water.Name = "img_water";
-            this.img_water.Size = new System.Drawing.Size(327, 234);
+            this.img_water.Size = new System.Drawing.Size(327, 311);
             this.img_water.TabIndex = 7;
             this.img_water.TabStop = false;
             this.img_water.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -165,20 +165,21 @@ namespace Proyecto_3
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(930, 528);
+            this.ClientSize = new System.Drawing.Size(933, 538);
             this.Controls.Add(this.mensajes);
             this.Controls.Add(this.mensajeLuz);
             this.Controls.Add(this.mensajeTemperatura);
-            this.Controls.Add(this.img_water);
             this.Controls.Add(this.img_motor);
             this.Controls.Add(this.mensajesDistancia);
             this.Controls.Add(this.botonDesconectar);
             this.Controls.Add(this.botonConectar);
             this.Controls.Add(this.botonBuscarPuertos);
             this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.img_water);
             this.Controls.Add(this.lienzo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sensores";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lienzo)).EndInit();

@@ -78,7 +78,7 @@ namespace Proyecto_3
                        {
                            MensajeDistancia("Distancia medida: " + distancia, Color.Green);
                            MensajeTemperatura("Temperatura: " + temperatura + " °C", Color.Black, temperatura);
-                           MensajeLuz("Nivel de Luz: " + luz, Color.Orange);
+                           MensajeLuz("Nivel de Luz: " + luz, luz);
                            an.LlenarTinaco((int)Math.Round(distancia),motor);
                        }
                ));
@@ -159,6 +159,15 @@ namespace Proyecto_3
         {
             mensajeLuz.Text = mensaje;
             mensajeLuz.ForeColor = c;
+        }
+
+        public void MensajeLuz(String mensaje, float lux)
+        {
+            mensajeLuz.Text = mensaje;
+            // Se volvera más amarillo entre más luminoso y más oscuro entre más cercano a cero
+            mensajeLuz.ForeColor = Color.FromArgb(((int) lux * 5), ((int) lux * 4), 0); 
+            // 255, 212, 0
+            // 54, 45
         }
 
         private void label1_Click(object sender, EventArgs e)

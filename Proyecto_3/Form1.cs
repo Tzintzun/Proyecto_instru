@@ -50,7 +50,7 @@ namespace Proyecto_3
         private void RecivirDatos(Object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
-            String datos = sp.ReadLine();
+            String datos = sp.ReadExisting();
             Console.WriteLine(datos + " cm");
             String[] info = datos.Split(' ');
             /*double distancia;

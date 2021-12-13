@@ -51,8 +51,8 @@ namespace Proyecto_3
                 activarMotores = false;
             }
 
-            tinaco.Height = 234 - (int)(porcentajeTinaco * 2.34);
-            tinaco.Y = 234 - tinaco.Height;
+            tinaco.Height = 322 - (int)(porcentajeTinaco * 3.22);
+            tinaco.Y = 322 - tinaco.Height;
             pintarAgua();
             
         }

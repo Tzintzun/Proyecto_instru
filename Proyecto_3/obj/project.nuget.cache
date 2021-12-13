@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Jo5a44O18+rxgiYzRDhG1YrgLCtPvFwxhLs8nHJUoATh7Wdw1XwQtPXMmJ/y2N8HqhV5Lae99uVH20ZwWk6lpA==",
+  "dgSpecHash": "GWllPcLpPHNPZJ09XaJt97dbyFk4GVWmKV1H25XbM7A1XhLoJLjEB9x4WobMYNUdihz9UCcH6u/lOIzg8hrqWw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\david\\Desktop\\Semestre 7\\Instrumentacion\\Proyecto 3\\proyecvto V2\\Proyecto_instru\\Proyecto_3\\Proyecto_3.csproj",
+  "projectFilePath": "C:\\Users\\david\\Documents\\GitHub\\Proyecto_instru\\Proyecto_3\\Proyecto_3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\david\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
@@ -15,8 +15,7 @@
     "C:\\Users\\david\\.nuget\\packages\\system.io.ports\\6.0.0\\system.io.ports.6.0.0.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
-    "C:\\Users\\david\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\david\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\david\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

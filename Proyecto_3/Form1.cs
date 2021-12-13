@@ -267,5 +267,11 @@ namespace Proyecto_3
         {
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 win2 = new Form2();
+            win2.Show();
+        }
     }
 }

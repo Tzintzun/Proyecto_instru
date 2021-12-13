@@ -43,6 +43,7 @@ namespace Proyecto_3
             this.mensajeLuz = new System.Windows.Forms.Label();
             this.mensajes = new System.Windows.Forms.Label();
             this.img_temp = new System.Windows.Forms.PictureBox();
+            this.btn_info = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lienzo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_motor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_water)).BeginInit();
@@ -179,12 +180,25 @@ namespace Proyecto_3
             this.img_temp.TabIndex = 11;
             this.img_temp.TabStop = false;
             // 
+            // btn_info
+            // 
+            this.btn_info.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_info.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_info.Image = ((System.Drawing.Image)(resources.GetObject("btn_info.Image")));
+            this.btn_info.Location = new System.Drawing.Point(999, 564);
+            this.btn_info.Name = "btn_info";
+            this.btn_info.Size = new System.Drawing.Size(55, 55);
+            this.btn_info.TabIndex = 12;
+            this.btn_info.UseVisualStyleBackColor = false;
+            this.btn_info.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1066, 717);
+            this.ClientSize = new System.Drawing.Size(1066, 627);
+            this.Controls.Add(this.btn_info);
             this.Controls.Add(this.img_temp);
             this.Controls.Add(this.mensajes);
             this.Controls.Add(this.mensajeLuz);
@@ -227,6 +241,7 @@ namespace Proyecto_3
         private System.Windows.Forms.Label mensajeLuz;
         private System.Windows.Forms.Label mensajes;
         private System.Windows.Forms.PictureBox img_temp;
+        private System.Windows.Forms.Button btn_info;
     }
 }
 

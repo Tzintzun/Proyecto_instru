@@ -18,7 +18,7 @@ namespace Proyecto_3
         SolidBrush lapiz;
         public Graphics graficos;
         //Rectangle tinaco = new Rectangle(454, 460, 320, 17);
-        Rectangle tinaco = new Rectangle(0, 0, 327, 234);
+        Rectangle tinaco = new Rectangle(0, 0, 324, 311);
 
         public Animaciones(PictureBox px, PictureBox img)
         {
@@ -51,7 +51,6 @@ namespace Proyecto_3
             {
                 activarMotores = false;
             }
-            //madrigal ya no cambies esto mejor acomoda la pacosicion de los objetos en el FORM
             tinaco.Height = distancia - (int)(porcentajeTinaco * distancia/100);
             tinaco.Y = distancia - tinaco.Height;
             pintarAgua();

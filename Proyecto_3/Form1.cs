@@ -53,32 +53,71 @@ namespace Proyecto_3
             String datos = sp.ReadLine();
             Console.WriteLine(datos + " cm");
             String[] info = datos.Split(' ');
+            /*double distancia;
+            double temperatura;
+            double luz;*/
             float distancia;
             float temperatura;
             float luz;
+            int motor;
             try
             {
+                /*distancia = ((double)(Int64.Parse(info[0]) / 2)) * 0.0343;
+                temperatura = ((double)(Int64.Parse(info[1]) / 1023.0)) * 100.0;
+                luz = (Int64.Parse(info[2].Replace("\r\n", "")) *5.0) / 1023.0;*/
+
                 distancia = float.Parse(info[0]);
-                temperatura = float.Parse(info[1].Replace("\r\n",""));
+                temperatura =(float)Math.Round(float.Parse(info[1]));
                 luz = float.Parse(info[2]);
+                motor = Int32.Parse(info[3].Replace("\r\n", ""));
+                luz = (float)Math.Pow(Math.E, (luz - 1.5758) / 0.7671);
+                an.Invoke(new MethodInvoker(
+                       delegate
+                       {
+                           MensajeDistancia("Distancia medida: " + distancia, Color.Green);
+                           MensajeTemperatura("Temperatura: " + temperatura + " °C", Color.Black);
+                           MensajeLuz("Nivel de Luz: " + luz, Color.Orange);
+                           an.LlenarTinaco((int)Math.Round(distancia),motor);
+                       }
+               ));
 
             }
-            catch(FormatException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine(ex.Message + "\n Pidiendo datos...");
-                byte[] instruccionInicio = { 1 };
-                comunicaciones.Write(instruccionInicio, 0, 1);
-                return;
-            }
-            an.Invoke(new MethodInvoker(
-                    delegate
+                //Console.WriteLine(ex.Message + "\n Pidiendo datos...");
+                try
+                {
+                    if (comunicaciones.IsOpen)
                     {
-                        MensajeDistancia("Distancia medida: " + distancia, Color.Green);
-                        MensajeTemperatura("Temperatura: " + temperatura + " °C",Color.Black);
-                        MensajeLuz("Nivel de Luz: "+luz,Color.Orange);
-                        an.LlenarTinaco((int)distancia);
+                        comunicaciones.Close();
+                        Console.WriteLine("Puerto " + comunicaciones.PortName + " desconectado");
                     }
-            ));
+                    else
+                    {
+                        Console.WriteLine("Puerto " + comunicaciones.PortName + " ya esta desconectado");
+                    }
+                    
+                }
+                catch (Exception disconecEx)
+                {
+                    MessageBox.Show(disconecEx.Message);
+                }
+
+                comunicaciones.BaudRate = 9600;
+                comunicaciones.Parity = Parity.None;
+                comunicaciones.DataBits = 8;
+                //comunicaciones.ReadTimeout = 500;
+                comunicaciones.Open();
+                if (comunicaciones.IsOpen)
+                {
+                    Console.WriteLine("Conectado al puerto " + comunicaciones.PortName, Color.Green);
+                }
+
+            }
+            
+            
+               
+            
 
 
 
@@ -134,16 +173,21 @@ namespace Proyecto_3
                     Mensaje("Escoge un puerto",Color.Red);
                 }
                 comunicaciones.PortName = comboBox1.Text;
+                comunicaciones.BaudRate = 9600;
+                comunicaciones.Parity = Parity.None;
+                comunicaciones.DataBits = 8;
+                //comunicaciones.ReadTimeout = 500;
                 comunicaciones.Open();
                 if (comunicaciones.IsOpen)
                 {
-                    Mensaje("Conectado al puerto " + comunicaciones.PortName,Color.Green);
+                    Console.WriteLine("Conectado al puerto " + comunicaciones.PortName,Color.Green);
                 }
                 botonDesconectar.Enabled = true;
                 botonConectar.Enabled = false;
 
                 byte[] instruccionInicio = { 1 };
                 comunicaciones.Write(instruccionInicio, 0,1);
+                img_motor.Enabled = false;
                 
             }catch(Exception ex)
             {
@@ -158,11 +202,11 @@ namespace Proyecto_3
                 if (comunicaciones.IsOpen)
                 {
                     comunicaciones.Close();
-                    Mensaje("Puerto " + comunicaciones.PortName + " desconectado", Color.Fuchsia);
+                    Console.WriteLine("Puerto " + comunicaciones.PortName + " desconectado");
                 }
                 else
                 {
-                    Mensaje("Puerto " + comunicaciones.PortName + " ya esta desconectado", Color.Fuchsia);
+                    Console.WriteLine("Puerto " + comunicaciones.PortName + " ya esta desconectado");
                 }
                 botonConectar.Enabled = true;
                 botonDesconectar.Enabled = false;
@@ -173,6 +217,9 @@ namespace Proyecto_3
             }
             an.graficos.Clear(Color.White);
             img_motor.Enabled = false;
+            MensajeDistancia("Distancia medida: -", Color.Black);
+            MensajeTemperatura("Temperatura: - °C", Color.Black);
+            MensajeLuz("Nivel de Luz: -", Color.Black);
         }
 
         private void imagenMotor_Click(object sender, EventArgs e)

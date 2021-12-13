@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,31 +28,33 @@ namespace Proyecto_3
             this.img = img;
         }
 
-        public void LlenarTinaco(int porcentaje)
+        public void deconectar()
         {
-            if (porcentaje < 0)
-            {
-                porcentajeTinaco = 0;
-            }
-            else if (porcentaje > 99)
-            {
-                porcentajeTinaco = 99;
-            }
-            else
+            porcentajeTinaco = -1;
+            activarMotores = false;
+        }
+
+        public void LlenarTinaco(int porcentaje, int motor)
+        {
+            if (porcentaje > 0 && porcentaje < 99)
             {
                 porcentajeTinaco = porcentaje;
             }
+            byte [] instruccion = new byte[1];
 
-            if (porcentaje >= 90)
+            if (motor == 1)
             {
                 activarMotores = true;
-            }else if(porcentaje <= 3)
+            }
+            else 
             {
                 activarMotores = false;
             }
+
             tinaco.Height = 234 - (int)(porcentajeTinaco * 2.34);
             tinaco.Y = 234 - tinaco.Height;
             pintarAgua();
+            
         }
         public void pintarAgua()
         {
